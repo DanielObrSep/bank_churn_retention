@@ -8,17 +8,20 @@ dbt_project/
 ├── models/
 │   ├── staging/
 │   │   ├── stg_bank_churn_account.sql
+│   │   ├── stg_bank_churn_account.yml
 │   │   ├── stg_bank_churn_customer.sql
-│   │   └── *.yml (tests y documentación)
+│   │   └── tg_bank_churn_customer.yml
 │   ├── marts/
 │   │   └── marts_bank_churn.sql
-│   │   └── *.yml (tests y documentación)
+│   │   └── marts_bank_churn.yml
 ├── seeds/
 │   ├── Bank_Churn_Account_Info.csv
 │   └── Bank_Churn_Customer_Info.csv
 ├── dbt_project.yml
 └── README.md
+
 Objetivos de modelado
+
 stg_bank_churn_account: limpieza de datos de cuenta (moneda, duplicados, valores nulos).
 
 stg_bank_churn_customer: limpieza de datos personales (nulos, duplicados, tipos).
