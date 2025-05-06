@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_bank_churn_customer
+    columns: 
+      - name: CustomerId
+        tests:
+          - not_null
+          - unique
+      - name: Surname
+        tests:
+          - not_null
+      - name: CreditScore
+        tests:
+          - not_null
+      - name: Geography
+        tests:
+          - not_null
+      - name: Gender
+        tests:
+          - not_null
+      - name: Age
+        tests:
+          - not_null
+      - name: Tenure
+        tests:
+          - not_null
+      - name: currency_c
+        tests:
+          - not_null
+      - name: EstimatedSalary
+        tests:
+          - not_null

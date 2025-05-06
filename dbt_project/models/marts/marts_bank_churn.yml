@@ -1,0 +1,47 @@
+version: 2
+
+models: 
+  - name: marts_bank_churn
+    columns:
+      - name: customerid
+        tests:
+          - unique
+          - not_null
+      - name: surname
+        tests:
+          - not_null
+      - name: creditscore
+        tests: 
+          - not_null
+      - name: geography
+        tests:
+          - not_null
+      - name: gender
+        tests:
+          - not_null
+      - name: age
+        tests: 
+          - not_null
+      - name: tenure
+        tests: 
+          - not_null
+      - name: numofproducts
+        tests: 
+          - not_null
+      - name: hascrcard
+        tests:
+          - not_null
+      - name: isactivemember
+        tests: 
+          - not_null
+      - name: balance
+        tests: 
+          - not_null
+      - name: estimatedsalary
+        tests: 
+          - not_null
+      - name: exited
+        tests: 
+          - not_null
+          - accepted_values:
+              values: [0, 1]

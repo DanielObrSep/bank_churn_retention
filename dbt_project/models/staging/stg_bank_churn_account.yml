@@ -1,0 +1,33 @@
+version: 2
+
+models: 
+  - name: stg_bank_churn_account
+    columns:
+      - name: CustomerId
+        tests: 
+          - not_null 
+          - unique
+      - name: Balance
+        tests: 
+          - not_null
+      - name: NumOfProducts
+        tests: 
+          - not_null
+      - name: HasCrCard
+        tests: 
+          - not_null
+      - name: Tenure
+        tests: 
+          - not_null
+      - name: IsActiveMember
+        tests: 
+          - not_null
+      - name: Exited
+        tests: 
+          - not_null
+      - name: currency_a
+        tests: 
+          - not_null
+      - name: balance
+        tests: 
+          - not_null
