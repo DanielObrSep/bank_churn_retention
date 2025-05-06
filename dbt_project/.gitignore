@@ -4,3 +4,7 @@ dbt_packages/
 logs/
 venv/
 macros/
+*.duckdb
+*.log
+*.env
+__pycache__/
