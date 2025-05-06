@@ -10,7 +10,7 @@ dbt_project/
 │   │   ├── stg_bank_churn_account.sql
 │   │   ├── stg_bank_churn_account.yml
 │   │   ├── stg_bank_churn_customer.sql
-│   │   └── tg_bank_churn_customer.yml
+│   │   └── stg_bank_churn_customer.yml
 │   ├── marts/
 │   │   └── marts_bank_churn.sql
 │   │   └── marts_bank_churn.yml
@@ -22,11 +22,22 @@ dbt_project/
 
 Objetivos de modelado
 
-stg_bank_churn_account: limpieza de datos de cuenta (moneda, duplicados, valores nulos).
+### `stg_bank_churn_account`
+- Conversión de `Balance` a tipo `float`
+- Separación del símbolo monetario
+- Eliminación de duplicados
+- Eliminación de valores nulos
+- Normalización de variables categóricas (`HasCrCard`, `IsActiveMember`)
 
-stg_bank_churn_customer: limpieza de datos personales (nulos, duplicados, tipos).
+### `stg_bank_churn_customer`
+- Limpieza de duplicados
+- Normalización de texto (`Gender`, `Geography`)
+- Limpieza de símbolo monetario en `EstimatedSalary`
+- Conversión de tipos y limpieza de espacios
 
-marts_bank_churn: unión de datos limpios y generación de vista analítica final.
+### `marts_bank_churn`
+- Unión de tablas `account` y `customer` por `CustomerId`
+- Consolidación de los datos limpios en una vista final para análisis
 
 Requisitos
 Python 3.10+
@@ -38,7 +49,13 @@ Instalación
 python -m venv venv
 venv\Scripts\activate
 pip install dbt-core dbt-duckdb
-Ejecución
+
+## Instalación
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install dbt-core dbt-duckdb
 
 # Inicializar el entorno
 dbt debug
